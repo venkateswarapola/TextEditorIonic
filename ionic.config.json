@@ -1,5 +1,7 @@
 {
   "name": "IonicTextEditor",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

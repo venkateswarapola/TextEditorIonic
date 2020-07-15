@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { QuillModule } from 'ngx-quill';
+import { RouterModule } from '@angular/router';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -12,7 +16,18 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    IonicStorageModule.forRoot(),
+    QuillModule.forRoot({
+      modules: {
+        syntax: true
+      }
+    }),
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomePage
+      }
+    ])
   ],
   declarations: [HomePage]
 })
